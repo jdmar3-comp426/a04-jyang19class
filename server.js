@@ -31,7 +31,7 @@ app.post("/app/new/", (req, res) => {
 	password = md5(req.body.pass)
 	const insert = db.prepare("INSERT INTO userinfo (user, pass) VALUES (?,?)")
 	const id = insert.run(user, password)
-	res.status(201).json({"message":"1 record createed: ID " + id.lastInsertRowid + " (201)"});
+	res.status(201).json({"message":"1 record created: ID " + id.lastInsertRowid + " (201)"});
 })
 
 // READ a list of all users (HTTP method GET) at endpoint /app/users/
